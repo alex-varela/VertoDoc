@@ -17,7 +17,7 @@
 ```
 > (optional to run from terminal instead of xcode) ios-deploy tool: `npm install -g ios-deploy` (this option is not working for now)
 
-## Setup the repo {#Setup}
+## Setup the repo 
 
  1. Clone the repo: `git clone git@github.com:AgentisPayments/verto-app.git`
  2. Move to repo folder: `cd ~/path/To/Repo/Folder`
@@ -26,7 +26,9 @@
  5. Add environment folder in the root folder.
  6. Select and set a enviroment using those follow commands:
 
-  |Environment  |Command                          |
+### 1. This is my Header
+
+  | Environment  |Command                         |
   |-------------|---------------------------------|
   | Development | `yarn generate-dev-credentials` |
   | Staging     | `yarn generate-qa-credentials`  |
@@ -67,7 +69,7 @@ the second option is using some commands previously set up (those commands shoul
   | Staging     | `yarn run-android-qa`  |
   | Production  | `yarn run-android-prod`|
 
-[^bignote]
+
 
 > If android install the apk but doesn't connect with metro follow these steps:
 >	1. Check if your device is connected to the same net that you computer.
@@ -85,7 +87,7 @@ the second option is using some commands previously set up (those commands shoul
 ### Verto app environments 
 
 
-Environment files are manage by `generate-env-credentials.sh` this script loads environment variables and replace specfic files for each platform **andorid** or **ios**.
+Environment files are manage by `generate-env-credentials.sh` this script loads environment variables and replace specfic files for each platform **andorid** or **ios** using comands defined on [link](#1--this-is-my-header)
 It is a shellscripts and basically to add specific file for any environment is necessary define file origin `dev, qa or prod` from enviroment folder as route and where that file will be replaced, and finally this script clean android gradle. example:
 
 |Environment  |Command                                         |
