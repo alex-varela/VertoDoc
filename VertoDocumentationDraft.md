@@ -89,10 +89,9 @@ the second option is using some commands previously set up (those commands shoul
 
 ### Verto app environments 
 
+Environment files are managed by generate-env-credentials.sh this script loads environment variables and replaces specific files for each platform android or ios using commands defined on the [environment commands table](#environment-commands).
+It is a shellscript and basically to add a specific file for any environment is necessary to define the file origin dev, qa or prod from the environment folder as route and where that file will be replaced, and finally, this script cleans the android gradle. example:  
 
-Environment files are manage by `generate-env-credentials.sh` this script loads environment variables and replace specfic files for each platform **andorid** or **ios** using comands defined on [environment commands table](#environment-commands). [environment commands table](#definitions)
-
-It is a shellscripts and basically to add specific file for any environment is necessary define file origin `dev, qa or prod` from enviroment folder as route and where that file will be replaced, and finally this script clean android gradle. example:
 
 |Environment  |Command                                         |
 |-------------|------------------------------------------------|
@@ -106,7 +105,7 @@ VERSION_CODE='XX'
 VERSION_NAME='X.X.X'
 VERSION_BUILD='XX'
 ```
-# Definitions
+### Definitions
 - **VERSION_CODE**: A positive integer used as an internal version number. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions. This value increases gradually per build (only for android).
 - **VERSION_NAME**: A string used as the version number shown to users. The value is a string so that you can describe the app version as a `<major>.<minor>.<point>`. The versionName has no purpose other than to be displayed to users.
 - **VERSION_BUILD**: A positive integer used for testing. This number can either be reset after a release or be continuously incremental throughout the app’s development.
@@ -141,4 +140,4 @@ VERSION_BUILD='XX'
 #### TO-DO
 - [ ] Add iOS "build version" and "build number" to generate-env-credentials.sh script to update automatically taking values from VERSION_NAME and VERSION_BUILD. Currently iOS values are changed on xcode.
 - [ ] Update generate-env-credentials.sh script to python.
-- [ ]
+- [ ] ...
