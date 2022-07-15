@@ -88,7 +88,7 @@ the second option is using some commands previously set up (those commands shoul
 ### Verto app environments 
 
 
-Environment files are manage by `generate-env-credentials.sh` this script loads environment variables and replace specfic files for each platform **andorid** or **ios** using comands defined on [environment commands table](#-environment-commnads)
+Environment files are manage by `generate-env-credentials.sh` this script loads environment variables and replace specfic files for each platform **andorid** or **ios** using comands defined on [environment commands table](#environment-commnads)
 It is a shellscripts and basically to add specific file for any environment is necessary define file origin `dev, qa or prod` from enviroment folder as route and where that file will be replaced, and finally this script clean android gradle. example:
 
 |Environment  |Command                                         |
