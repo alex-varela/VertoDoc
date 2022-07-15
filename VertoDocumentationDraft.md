@@ -27,7 +27,7 @@
  6. Select and set a enviroment using those follow commands:
 
 
-#### Environment commnads
+#### Environment commands
   | Environment  |Command                         |
   |-------------|---------------------------------|
   | Development | `yarn generate-dev-credentials` |
@@ -64,6 +64,8 @@ For android we have 2 ways to run Verto app first one is using **Android Studio*
 
 the second option is using some commands previously set up (those commands should be used on the root Verto app folder and select an env)
 
+
+#### Android flavor commands
   |Environment  |Command                 |
   |-------------|------------------------|
   | Development | `yarn run-android-dev` |
@@ -88,7 +90,8 @@ the second option is using some commands previously set up (those commands shoul
 ### Verto app environments 
 
 
-Environment files are manage by `generate-env-credentials.sh` this script loads environment variables and replace specfic files for each platform **andorid** or **ios** using comands defined on [environment commands table](#environment-commnads)
+Environment files are manage by `generate-env-credentials.sh` this script loads environment variables and replace specfic files for each platform **andorid** or **ios** using comands defined on [environment commands table](#environment-commands). [environment commands table](#definitions)
+
 It is a shellscripts and basically to add specific file for any environment is necessary define file origin `dev, qa or prod` from enviroment folder as route and where that file will be replaced, and finally this script clean android gradle. example:
 
 |Environment  |Command                                         |
@@ -103,7 +106,7 @@ VERSION_CODE='XX'
 VERSION_NAME='X.X.X'
 VERSION_BUILD='XX'
 ```
-### Definitions
+# Definitions
 - **VERSION_CODE**: A positive integer used as an internal version number. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions. This value increases gradually per build (only for android).
 - **VERSION_NAME**: A string used as the version number shown to users. The value is a string so that you can describe the app version as a `<major>.<minor>.<point>`. The versionName has no purpose other than to be displayed to users.
 - **VERSION_BUILD**: A positive integer used for testing. This number can either be reset after a release or be continuously incremental throughout the app’s development.
