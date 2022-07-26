@@ -28,7 +28,7 @@
 
 
 #### Environment commands
-  | Environment  |Command                         |
+  | Environment |Command                          |
   |-------------|---------------------------------|
   | Development | `yarn generate-dev-credentials` |
   | Staging     | `yarn generate-qa-credentials`  |
@@ -86,7 +86,6 @@ the second option is using some commands previously set up (those commands shoul
 
 ---
 
-
 ### Verto app environments 
 
 Environment files are managed by generate-env-credentials.sh this script loads environment variables and replaces specific files for each platform android or ios using commands defined on the [environment commands table](#environment-commands).
@@ -101,17 +100,11 @@ It is a shellscript and basically to add a specific file for any environment is 
 Also `generate-env-credentials.sh` manage android appVerto version:
 
 ```
-VERSION_CODE='XX'
+VERSION_CODE=XX
+VERSION_BUILD=XX
 VERSION_NAME='X.X.X'
-VERSION_BUILD='XX'
+
 ```
-### Definitions
-- **VERSION_CODE**: A positive integer used as an internal version number. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions. This value increases gradually per build (only for android).
-- **VERSION_NAME**: A string used as the version number shown to users. The value is a string so that you can describe the app version as a `<major>.<minor>.<point>`. The versionName has no purpose other than to be displayed to users.
-- **VERSION_BUILD**: A positive integer used for testing. This number can either be reset after a release or be continuously incremental throughout the app’s development.
-
-
-
 ### Environment folder basic structure:
 
  ``` 
@@ -135,9 +128,78 @@ VERSION_BUILD='XX'
 ```
 
 
+#### Differences between android and iOS versioning
+
+- Android:
+	- **Version Code**: A positive integer used as an internal version number. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions. This value increases gradually per build (only for android).
+	- **Version Name**: A string used as the version number shown to users. The value is a string so that you can describe the app version as a `<major>.<minor>.<point>`. The versionName has no purpose other than to be displayed to users.
+
+
+	- * **VERSION_BUILD**: A positive integer used for testing. This number can either be reset after a release or be continuously incremental throughout the app’s development.
+> This is a special value for android added  to customize the user agent name for keep same version displayed for android and iOS, this value should be setting up using the same ios `Build Number`.
+
+- IOS:
+	- **Build Version**: CFBundleShortVersionString (String - iOS, OS X) number you are using to denote this version of your app. Usually this follows a `<major>.<minor>.<point>` version scheme to let users know which releases are smaller maintenance updates and which are big deal new features.
+	- **Build Number**: CFBundleVersion (String - iOS, OS X) specifies the build version number of the bundle, which identifies an iteration (released or unreleased) of the bundle. The build version number should be a string comprised of three non-negative, period-separated integers with the first integer being greater than zero.
+
+
+#### User Agent name
+
+- Android
+`WebViewApp Verto (Environment Name)/(Version Name).(Version Build) (HelloApp/0.1) (Device Model)`
+
+- IOS
+`WebViewApp Verto (Environment Name)/(Build Version).(Build Number) (HelloApp/0.1) (Device Model)`
+
+
+
+## Libraries Implemented
+
+- [react-native-webview](https://github.com/react-native-webview/react-native-webview): `npm install --save react-native-webview`
+- [react-native-firebase](https://rnfirebase.io/#1-install-via-npm): `npm install --save @react-native-firebase/app`
+- [lottie-react-native](https://github.com/lottie-react-native/lottie-react-native): `npm i --save lottie-react-native && npm i --save lottie-ios@3.2.3`
+- [react-navigation/native](https://reactnavigation.org/docs/getting-started/): `npm install @react-navigation/native react-native-screens react-native-safe-area-context`
+- [react-navigation/native-stack](https://reactnavigation.org/docs/hello-react-navigation): `npm install @react-navigation/native-stack`
+- [react-native-lottie-splash-screen](https://github.com/HwangTaehyun/react-native-lottie-splash-screen): `npm i react-native-lottie-splash-screen --save`
+- [react-native-dotenv](https://github.com/goatandsheep/react-native-dotenv): `npm i react-native-dotenv`
+- [react-native-device-info](https://github.com/react-native-device-info/react-native-device-info) `yarn add react-native-device-info`
+- [babel-plugin-module-resolver](https://www.npmjs.com/package/babel-plugin-module-resolver): `yarn add --dev babel-plugin-module-resolver`
+- [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons): `yarn add react-native-vector-icons`
+- [react-native-community/async-storage](https://www.npmjs.com/package/@react-native-community/async-storage): `yarn add @react-native-community/async-storage`
+- [react-native-permissions](https://github.com/zoontek/react-native-permissions): `npm install --save react-native-permissions`
+- [apollo/client & graphQL](https://www.apollographql.com/docs/react/integrations/react-native/): `npm install @apollo/client graphql`
+- [react-native-community/netinfo](https://github.com/react-native-netinfo/react-native-netinfo): `npm i @react-native-community/netinfo`
+- [segment/analytics-react-native & segment/sovran-react-native](https://github.com/segmentio/analytics-react-native): `npm install --save @segment/analytics-react-native @segment/sovran-react-native`
+- [axios](https://github.com/axios/axios): `npm install axios`
+- [react-native-appboy-sdk](https://github.com/Appboy/appboy-react-sdk): `npm install react-native-appboy-sdk`
+- [react-native-branch](https://github.com/BranchMetrics/react-native-branch-deep-linking-attribution): `npm install react-native-branch@5.4.1`
+- [react-native-camera](https://github.com/react-native-camera/react-native-camera/tree/master): `npm install --save react-native-camera@git+https://git@github.com/react-native-community/react-native-camera.git`
+- [react-native-contacts](https://github.com/morenoh149/react-native-contacts): `npm install react-native-contacts --save`
+- [react-native-dialog](https://github.com/mmazzarolo/react-native-dialog): `npm install react-native-dialog`
+- [react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker): `npm i react-native-image-crop-picker --save`
+- [react-native-keychain](https://github.com/oblador/react-native-keychain): `npm i react-native-keychain`
+- [react-native-permissions](https://www.npmjs.com/package/react-native-permissions): `npm i react-native-permissions`
+- [react-native-qr-decode-image-camera](https://github.com/escolarea/react-native-qr-decode-image-camera.git): `npm install --save https://github.com/escolarea/react-native-qr-decode-image-camera.git`
+- [rollbar-react-native](https://docs.rollbar.com/docs/react-native): `npm install rollbar-react-native --save`
+- [react-native-touch-id](https://github.com/escolarea/react-native-touch-id.git#v4-0-1): `npm install --save https://github.com/escolarea/react-native-touch-id.git#v4-0-1`
+- [react-native-svg](https://github.com/react-native-svg/react-native-svg): `npm install react-native-svg`
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons): `npm install --save react-native-vector-icons`
+- [redux](https://react-redux.js.org/introduction/getting-started): `npm install react-redux`
+- [redux-thunk](https://github.com/reduxjs/redux-thunk): `npm install redux-thunk`
+- [redux-persist](https://github.com/rt2zz/redux-persist): `npm install redux-persist`
+- [redux-logger](https://github.com/LogRocket/redux-logger): `npm i --save redux-logger`
+- [react-native-screens](https://github.com/software-mansion/react-native-screens): `npm i react-native-screens`
+- [react-native-safe-area-context](https://github.com/th3rdwave/react-native-safe-area-context): `npm install react-native-safe-area-context`
+
+
+
+## Upload builds for iOS and android
+
 
 ----
 #### TO-DO
 - [ ] Add iOS "build version" and "build number" to generate-env-credentials.sh script to update automatically taking values from VERSION_NAME and VERSION_BUILD. Currently iOS values are changed on xcode.
 - [ ] Update generate-env-credentials.sh script to python.
 - [ ] ...
+
+
