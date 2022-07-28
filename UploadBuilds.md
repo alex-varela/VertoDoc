@@ -64,17 +64,17 @@ Changelog:
 ```
 AndroidBuilds
 	|
-	version
+	|-/version
 		|
-		|/dev
-			/release
-			/debug
+		|-/dev
+			|-/release
+			|-/debug
 		|/qa
-			/release
-			/debug
+			|-/release
+			|-/debug
 		|/prod
-			/release
-			/debug	
+			|-/release
+			|-/debug
 ```
 6. Go to your android build output folder and go to `x.x.x.x`/`flavor folder`/`variant folder`
 and change your build name from `relase.aab` to `(App Name)_(Flavor)_(App version).aab`.
