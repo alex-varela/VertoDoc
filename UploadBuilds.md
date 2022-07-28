@@ -2,7 +2,7 @@
 # Manual Upload builds for iOS and Android (Manually)
 
 ## steps:
-1. follow branching strategy steps [branch strategy]()
+1. follow branching strategy steps [branch strategy](https://lucid.app/lucidchart/9e6a5ba3-8f14-4660-adc7-59b8c401dfae/edit?invitationId=inv_21bfacc2-bbb1-45c5-a927-dded29ea0641&page=WJa8H76cjtB6#)
 1. Modify the Android app version following [verto app versioning](https://github.com/AgentisPayments/verto-app/wiki/App-Environments-and-Versioning#verto-app-versioning).
 1. To prepare builds for any platform is necessary to select the environment target `dev`,`qa` or, `prod` using [Environment Commands Table](https://github.com/AgentisPayments/verto-app/wiki/General#environment-commands).
 2. Restart and reset metro cache using `npx react-native start --reset-cache`.
