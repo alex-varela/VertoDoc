@@ -1,4 +1,4 @@
-# Verto App
+# General
 
 ## Install and  setup react-native
 - [Follow this guide for React Native CLI - macOS - iOS and android](https://reactnative.dev/docs/environment-setup)
@@ -86,7 +86,7 @@ the second option is using some commands previously set up (those commands shoul
 
 ---
 
-### Verto app environments 
+# Verto app environments 
 
 Environment files are managed by generate-env-credentials.sh this script loads environment variables and replaces specific files for each platform android or ios using commands defined on the [environment commands table](#environment-commands).
 This shellscript adds a specific file for any environment per each operating system is necessary to define the file origin dev, qa or prod from the environment folder as route and where that file will be replaced, and finally, this script cleans the android gradle. example:
@@ -197,12 +197,6 @@ You usually don't change the first 3 numbers while you are developing the same f
 
 
 
-## Upload builds for iOS and Android
-
-To prepare builds for any platform is necessary select the environment target `dev`,`qa` or `prod` 
-
-### IOS
-### Android
 
 
 ## Post-Messages
