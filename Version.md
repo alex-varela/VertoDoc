@@ -31,6 +31,7 @@ allprojects {
 - The other option is to update to a supported version, for example, `v0.68.x`, as an experiment tried to update Verto react native version to `v0.68.5` in this case, omitted to react native new architecture changes only focusing on changes necessary to run a build in both platforms (ios and android) probably if we introduce those changes can increase the risk, the unique issue found after a smoke test was in android, the QR code scanner frame overlaps the translucent frames (in the update results link can see an example )
     - [Comparatative between v0.65.1 and v0.68.5](https://react-native-community.github.io/upgrade-helper/?from=0.65.1&to=0.68.5)
 	 - [Update results (temporal update)](https://github.com/AgentisPayments/verto-app/issues/190#issuecomment-1358158644)
+	 
 
 
 
