@@ -1,12 +1,17 @@
 ## Verto React native Version
 
-#### Current Version: `v0.65.1` 
-> As recommendation is to update the react native version to v0.65.3 to solve the android builds issue because seems, for now, don't exist security risks related to this version at 22/Dec/2022
+#### Verto App RN History
+
+| Version | Release Date | Changes |
+| ------- | ------------ | ------- |
+| v0.65.1 | -   | The project was created with this version |
+| v0.65.3 | 2022-02-15   | [](https://github.com/alex-varela/VertoDoc/edit/master/Version.md#v0653) |
 
 
-#### Why is neccesary update it?
+
+#### v0.65.3
 Starting from 4th November 2022 react native had an issue generating android builds, details about the issue: [React Native issue #35210](https://github.com/facebook/react-native/issues/35210).
-Currently the Verto app `1.0.9 (10)` keep  react native `0.65.1` was implemented this fix (to avoid risks previous to deploy this version):
+Currently the Verto app `1.1.3 (1)` keep  react native `0.65.1` was implemented this fix (to avoid risks previous to deploy this version):
 ```
 //project_path/android/buld.gradle 
 
